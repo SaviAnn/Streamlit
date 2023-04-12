@@ -10,11 +10,14 @@ st.write("""
 """)
 tips=pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv')
 st.write(tips)
-st.write(""" Как видно из диаграммы ниже, средний счет находится в диапазоне 20-30 долларов
+st.write(""" Как видно из диаграммы ниже, **средний** счет находится в диапазоне 20-30 долларов
 """)
          #define seaborn background colors
-sns.set_style('darkgrid')
-sns.color_palette("rocket", as_cmap=True)
+#sns.set_style('darkgrid')
+#sns.color_palette("rocket", as_cmap=True)
+sns.set(style="darkgrid", context="talk")
+plt.style.use("dark_background")
+plt.rcParams.update({"grid.linewidth":0.5, "grid.alpha":0.2})
 
 fig = plt.figure(figsize=(10, 4))
 sns.histplot(x="total_bill", data=tips)
@@ -56,7 +59,7 @@ sns.scatterplot(x='tip',
                 data=tips)
 st.pyplot(fig4)
 st.write("""
-### Сумма всех счетов за каждый день с разбивков по приемам пищи
+### Сумма всех счетов за каждый день с разбивкой по приемам пищи
 Можно заметить, что в выходные обедов нет
 """)
 fig5= plt.figure(figsize=(10, 4))
@@ -64,7 +67,7 @@ sns.boxplot(data=tips, x="day", y="total_bill", hue="time")
 st.pyplot(fig5)
 
 st.write("""
-#### Сравнение распределения графиков распрелеления чаевых, в зависимости от приема пищи lunch/dinner 
+#### Сравнение распределения графиков распрелеления чаевых, в зависимости от приема пищи обед/ужин 
 """)
 fig6, axes = plt.subplots(1, 2, figsize=(10, 6))
 fig6.suptitle('Lunch and Dinner Tips')

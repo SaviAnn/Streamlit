@@ -1,9 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-import scipy.stats as stats
 import numpy as np
 from PIL import Image
-from scipy.stats import poisson
 import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler, RobustScaler
 from sklearn.linear_model import LogisticRegression

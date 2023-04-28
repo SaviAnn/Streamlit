@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import seaborn as sns
-from sklearn.preprocessing import MinMaxScaler, RobustScaler
+from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandartScaler
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 from io import StringIO
@@ -69,7 +69,7 @@ st.write("""
 
 """)
 
-scaler = RobustScaler()
+scaler = StandartScaler()
 train[['x1', 'x2', 'x3']] = scaler.fit_transform(train[['x1', 'x2', 'x3']])
 test[['x1', 'x2', 'x3']] = scaler.fit_transform(test[['x1', 'x2', 'x3']])
 df_aux = train.describe(include='all')

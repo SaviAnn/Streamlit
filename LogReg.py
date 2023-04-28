@@ -30,7 +30,7 @@ class LogReg:
 
         
    def fit(self, X, y):
-     steps=4000
+     steps=6000
      for i in range(steps):
           yhat = self.intercept_ + np.dot(X, self.coef_)
           sigmoid_yhat = sigmoid(yhat)

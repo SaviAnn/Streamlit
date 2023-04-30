@@ -45,4 +45,4 @@ if uploaded_file is not None:
     trunc_sigma = sigma[:top_k, :top_k]
     trunc_V = V[:top_k, :]
     trunc_img = trunc_U@trunc_sigma@trunc_V
-    st.image(trunc_img, use_column_width=True)
+    st.image(trunc_img, clamp=True, use_column_width=True)
